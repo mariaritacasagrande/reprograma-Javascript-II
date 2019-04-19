@@ -289,7 +289,7 @@ Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes
 Um laço for é repetido até que a condição especificada seja falsa.
 
 ```
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
     //  Vai executar 5 vezes
 }
 ```
@@ -313,15 +313,14 @@ while (condicao)
 ### Arrays
 Em JavaScript, arrays são um tipo especial de objeto que representam um conjunto ordenado de valores numerados.
 ```
-var a = new Array();
-a[0] = "dog";
+let a[0] = "dog";
 a[1] = "cat";
 a[2] = "hen";
 a.length // 3
 ```
 Uma forma mais conveniente de utilização de um array, na verdade a mais usada:
 ```
-var a = ["dog", "cat", "hen"];
+let a = ["dog", "cat", "hen"];
 a.length // 3
 ```
 ### Funções
@@ -329,7 +328,7 @@ a.length // 3
 Uma função é um objeto que tem código executável associado. Uma função pode ser chamada para executar esse código executável e retornar um valor calculado.
 ```
 function add(x, y) {
-    var total = x + y;
+    let total = x + y;
     return total;
 }
 ```
@@ -338,11 +337,11 @@ Um objeto em JavaScript é um conjunto não ordenado de valores nomeados.
 
 Para criar um objeto vazio:
 ```
-var obj = {};
+let obj = {};
 ```
 Podemos criar um objeto com propriedades e métodos:
 ```
-var obj = {
+let obj = {
     name: "Carrot",
     "for": "Max",
     details: {
@@ -365,7 +364,7 @@ function Person(name, age) {
 ```
 Instanciamos o objeto.
 ```
-var obj = new Person("You", 36);
+let obj = new Person("You", 36);
 ```
 Alteramos os valores das propriedades.
 ```
@@ -384,7 +383,7 @@ Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes
 
 Você pode pensar em um laço de repetição como um jogo onde você manda o seu personagem andar X passos em uma direção e Y passos em outra; por exemplo, a ideia "vá 5 passos para leste" pode ser expressa em um laço desta forma:
 ```
-var passo;
+let passo;
 for (passo = 0; passo < 5; passo++) {
   // Executa 5 vezes, com os valores de passos de 0 a 4.
   console.log('Ande um passo para o leste');
@@ -426,8 +425,8 @@ A função a seguir contém uma declaração `for` que contará o número de op�
 
 <script>
 function howMany(selectObject) {
-  var numeroSelecionadas = 0;
-  for (var i = 0; i < selectObject.options.length; i++) {
+  let numeroSelecionadas = 0;
+  for (let i = 0; i < selectObject.options.length; i++) {
     if (selectObject.options[i].selected) {
       numeroSelecionadas++;
     }
@@ -435,7 +434,7 @@ function howMany(selectObject) {
   return numeroSelecionadas;
 }
 
-var btn = document.getElementById("btn");
+let btn = document.getElementById("btn");
 btn.addEventListener("click", function(){
   alert('Total de opções selecionadas: ' + howMany(document.selectForm.tipoMusica))
 });
@@ -681,7 +680,7 @@ Agora vamos ver um exemplo de como utilizar o Event Listener.
 </form>
  
 <script type="text/javascript">
-var f = document.forms[0];
+let f = document.forms[0];
 addEvent(f, "submit", function( e ) { alert(f.a.value);return false; });
 addEvent(f.a, "keyup", function( e ) { f.a.value=f.a.value.toUpperCase(); });
 </script>
@@ -727,6 +726,7 @@ else
 O evento onChange é utilizado para que seja realizada determinada ação após alguma mudança. No exemplo abaixo iremos fazer essa mudança acontecer ao clicarmos fora do input text.
 
 *Listagem 4:* Evento onChange
+
 ```
 <!DOCTYPE html>
 <html>
@@ -735,7 +735,7 @@ O evento onChange é utilizado para que seja realizada determinada ação após 
 <script>
 function myFunction()
 {
-var x=document.getElementById("fname");
+let x=document.getElementById("fname");
 x.value=x.value.toUpperCase();
 }
 </script>
