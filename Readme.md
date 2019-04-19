@@ -218,7 +218,7 @@ if (n == 1) {
     // executa este bloco else
 }
 ```
-
+> Exercício: if/else
 #### Operador Condicional Ternário
 
 É possível obter resultados semelhantes usando o operador condicional ternário condition ? expr1 : expr2.
@@ -250,10 +250,35 @@ switch(action) {
         donothing();
 }
 ```
+> Exercício: Switch
+## DOM
+
+### O que é o DOM?
+
+ *   DOM é uma sigla que significa Document Object Model.
+    *   Quando a página é carregada o browser cria um objeto que representa os elementos da página a partir do HTML.
+    *   A forma mais fácil de acessar e manipular o DOM é usando JavaScript
+    *   Componentes:
+        *   Document - representa o documento HTML
+        *   Elements - são todas as tags que estão no arquivo HTML e se transformam em elementos da árvore DOM
+        *   Texts - é o conteúdo de texto que vai entre os elementos (tags).
+        *   Attributes - são os todos atributos para um nó específico. No caso, o attribute class="HERO" está associado ao elemento <p>, outros exemplos de atributos são o href, o id, entre outros.
+            
+### Métodos para manipular o DOM
+
+`getElementById()`- Retorna o elemento que estiver contendo o nome do ID passado. Como os IDs devem ser únicos, é um método muito útil para pegar apenas o elemento desejado.
+
+`getElementsByClassName()` - Retorna uma coleção de todos elementos que estiverem contendo o nome da classe passada.
+
+`getElementsByTagName()`- uma coleção de todos elementos que contennham a tag name passada.
+
+`querySelector()` - Retorna o primeiro elemento que possui o seletor CSS passado (usa mesma sintaxe do CSS) Exemplo: querySelector('.classe'), querySelector('#id') e querySelector('tag')
+
+`querySelectorAll()` - semelhante ao querySelector(), só que retorna todos os elementos que se equiparam ao seletor
+
+> Exercício: DOM
 
 ## Laço de Repetição
-
-![](https://media1.giphy.com/media/3o6ZsUiuuksZbtlXW0/giphy.gif)
 
 Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
 
@@ -344,6 +369,135 @@ Alteramos os valores das propriedades.
 obj.name = "Simon";
 obj.name; // print 'Simon'
 ```
+
+***
+# Aula 2
+
+## Laços de Repetição
+
+![](https://media1.giphy.com/media/3o6ZsUiuuksZbtlXW0/giphy.gif)
+
+Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes. 
+
+Você pode pensar em um laço de repetição como um jogo onde você manda o seu personagem andar X passos em uma direção e Y passos em outra; por exemplo, a ideia "vá 5 passos para leste" pode ser expressa em um laço desta forma:
+```
+var passo;
+for (passo = 0; passo < 5; passo++) {
+  // Executa 5 vezes, com os valores de passos de 0 a 4.
+  console.log('Ande um passo para o leste');
+}
+```
+
+Existem várias formas diferentes de laços, mas eles essencialmente fazem a mesma coisa: repetir uma ação múltiplas vezes ( inclusive você poderá repetir 0 vezes). Os vários mecanismos diferentes de laços oferecem diferentes formas de determinar quando este irá começar ou terminar. Há várias situações em que é mais fácil resolver um problema utilizando um determinado tipo de laço do que outros.
+
+### for (para)
+Um laço for é repetido até que a condição especificada seja falsa. Uma declaração for é feita da seguinte maneira:
+```
+for ([expressaoInicial]; [condicao]; [incremento])
+  declaracao
+```
+Quando um for é executado, ocorre o seguinte:
+
+*   A expressão expressao Inicial é inicializada e, caso possível, é executada. Normalmente essa expressão inicializa um ou mais contadores, mas a sintaxe permite expressões de qualquer grau de complexidade. Podendo conter também declaração de variáveis.
+*   A expressão condicao é avaliada. caso o resultado de condicao seja verdadeiro, o laço é executado. Se o valor de condicao é falso, então o laço terminará. Se a expressão condicao é omitida, a condicao é assumida como verdadeira.
+*   A instrução é executada. Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupá-las.
+*   A atualização da expressão incremento, se houver, executa, e retorna o controle para o passo 2.
+
+### Exemplo
+A função a seguir contém uma declaração `for` que contará o número de opções selecionadas em uma lista (um elemento <select> permite várias seleções). Dentro do for é declarado uma váriavel i inicializada com zero. A declaração for verifica se i é menor que o número de opções no elemento <select>, executa sucessivas declaração  if, e incrementa i de um em um a cada passagem pelo laço.
+```
+<form name="selectForm">
+  <p>
+    <label for="tipoMusica">Escolha alguns tipos de música, em seguida, clique no botão abaixo:</label>
+    <select id="tipoMusica" name="tipoMusica" multiple="multiple">
+      <option selected="selected">R&B</option>
+      <option>Jazz</option>
+      <option>Blues</option>
+      <option>New Age</option>
+      <option>Classico</option>
+      <option>Ópera</option>
+    </select>
+  </p>
+  <p><input id="btn" type="button" value="Quantos foram selecionados?" /></p>
+</form>
+
+<script>
+function howMany(selectObject) {
+  var numeroSelecionadas = 0;
+  for (var i = 0; i < selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numeroSelecionadas++;
+    }
+  }
+  return numeroSelecionadas;
+}
+
+var btn = document.getElementById("btn");
+btn.addEventListener("click", function(){
+  alert('Total de opções selecionadas: ' + howMany(document.selectForm.tipoMusica))
+});
+</script>
+
+```
+
+## do...while (faça ... enquanto)
+A instrução `do...while` repetirá **até que** a condição especificada seja falsa.
+```
+do
+  declaracao
+while (condicao);
+```
+
+A instrução será executada uma vez antes da condição ser verificada. Para executar multiplas instruções utilize uma declaração de bloco ({ ... }) para agrupá-las. Caso a condicao seja verdadeira, então o laço será executado novamente. Ao final de cada execução, a condicao é verificada. Quando a condição contida no while for falsa a execução do laço é terminada e o controle é passado para a instrução seguinte a `do...while`.
+
+#### Exemplo
+No exemplo a seguir, o laço é executado pelo menos uma vez e irá executar até que i seja menor que 5.
+```
+do {
+  i += 1;
+  console.log(i);
+} while (i < 5);
+```
+
+## while (enquanto)
+Uma declaração while executa suas instruções, desde que uma condição especificada seja avaliada como verdadeira. Segue uma declaração while: 
+```
+while (condicao)
+  declaracao
+```
+
+Se a condição se tornar falsa,  a declaração dentro do laço para a execução e o controle é passado para a instrução após o laço.
+
+O teste da condição ocorre antes que o laço seja executado. Desta forma se a condição for verdadeira o laço executará e testará a condição novamente. Se a condição for falsa o laço termina e passa o controle para as instruções após o laço.
+
+Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupar essas declarações.
+
+### Exemplo 1
+O while a seguir executará enquanto n for menor que três:
+```
+n = 0;
+x = 0;
+while (n < 3) {
+  n++;
+  x += n;
+}
+```
+
+A cada iteração, o laço incrementa n e adiciona este valor para x. Portanto, x e n recebem os seguintes valores:
+
+*   Depois de executar pela primeira vez: n = 1 e x = 1
+*   Depois da segunda vez: n = 2 e x = 3
+*   Depois da terceira vez: n = 3 e x = 6
+*   Depois de executar pela terceira vez, a condição n < 3 não será mais verdadeira, então o laço encerrará.
+
+### Exemplo 2
+Evite laços infinitos. Tenha certeza que a condição do laço eventualmente será falsa; caso contrário, o laço nunca terminará. O while a seguir executará para sempre pois sua condição nunca será falsa:
+```
+while (true) {
+  console.log("Olá, mundo");
+}
+```
+
 ***
 # Aula 3
 
@@ -389,7 +543,6 @@ album.released = 1991;
 album.showInfo = function() {
   alert("Título do álbum: " + this.title + "Lançado em: " + this.released);
 };
-
 ```
 
 Como você pôde notar, a sintaxe ficou um pouco diferente. Aqui devemos utilizar a palavra-chave new seguida pela função construtora Object() ao invés de abrir e fechar chaves. Depois nós adicionamos as propriedades e métodos utilizando album.title, album.released e album.showInfo e atribuimos os valores à elas ao invés de colocar os pares de "nome: valor".
@@ -403,7 +556,6 @@ album.title // Retorna: Metallica (Black Album)
  
 // notação de colchetes
 album["title"] // Retorna: Metallica (Black Album)
-
 ```
 
 Repare que no código acima, acessamos a mesma propriedade de duas maneiras diferentes. Geralmente é recomendável que você utilize a notação de ponto - album.title - por ser mais simples de ler e escrever.
@@ -418,7 +570,6 @@ album.showInfo() // Exibe alerta:
 // notação de colchetes
 album["showInfo"]() // Exibe alerta:
 // Título do álbum: Metallica (Black Album) Lançado em: 1991
-
 ```
 
 ### Alterando e adicionando propriedades
@@ -457,6 +608,9 @@ delete album.showInfo // deleta o método showInfo
  
 typeof album.showInfo // "undefined"
 ```
+
+> Exercício: Objetos
+
 ***
 # Aula 4
 
@@ -502,7 +656,6 @@ Vamos ver um exemplo de como usar um evento de maneira inline em JavaScript. Des
  
 </body>
 </html>
-
 ```
 
 No exemplo anterior nós vimos de maneira inline como utilizar o evento onclick.
@@ -565,7 +718,6 @@ else
 <p>Irá aparecer um alert dizendo se os cookies estão ou não liberados em seu navegador</p>
 </body>
 </html>
-
 ``` 
 
 ### onChange
@@ -594,7 +746,6 @@ Ao clicarmos fora do input text o texto escrito nele ficará todo em caixa alta.
  
 </body>
 </html>
-
 ```
 
 ### onMouseOver e onMouseOut
@@ -660,3 +811,4 @@ obj.innerHTML="Obrigado"
 </body>
 </html>
 ```
+> Exercício: Eventos
