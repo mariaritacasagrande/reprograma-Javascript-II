@@ -14,55 +14,55 @@ Para tirar dúvidas, leve para a sala de aula, mande mensagem para a professora 
 
 # Guia Rápido - revisão
 
-* [Aula 1 - Revisão](#)
-    *    [Variaveis](#)
-         *    [Sobre Variaveis](#)
-         *    [Escopo de variavel](#)
-         *    [Tipos](#)
-                *    [Numeros](#)
-                *    [Strings](#)
-                *    [Booleanos](#)
-                *    [null e undefined](#)
-        * [Conversão](#)
-    *   [Condicionais](#)
-        *   [Condicional - if / else](#)
-            *   [Operador Condicional Ternário](#)   
-        *   [Condicional - switch](#)
-    *   [Laços de Repetiçõo](#)
-        *   [for (para)](#)
-        *   [do…while(faça … enquanto)](#)
-        *   [while (enquanto)](#)
-    * [Arrays](#)
-    * [Funções](#)
-    * [Objetos](#)
+* [Aula 1 - Revisão](https://github.com/mariaritacasagrande/reprograma-Javascript-II#aula-1)
+    *    [Variaveis](https://github.com/mariaritacasagrande/reprograma-Javascript-II#vari%C3%A1veis)
+         *    [Sobre Variaveis](https://github.com/mariaritacasagrande/reprograma-Javascript-II#sobre-variaveis)
+         *    [Escopo de variavel](https://github.com/mariaritacasagrande/reprograma-Javascript-II#escopo-de-variavel)
+         *    [Tipos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#tipos)
+                *    [Numeros](https://github.com/mariaritacasagrande/reprograma-Javascript-II#n%C3%BAmeros)
+                *    [Strings](https://github.com/mariaritacasagrande/reprograma-Javascript-II#strings)
+                *    [Booleanos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#booleanos)
+                *    [null e undefined](https://github.com/mariaritacasagrande/reprograma-Javascript-II#null-e-undefined)
+        * [Conversão](https://github.com/mariaritacasagrande/reprograma-Javascript-II#convers%C3%A3o)
+    *   [Condicionais](https://github.com/mariaritacasagrande/reprograma-Javascript-II#condicionais)
+        *   [Condicional - if / else](https://github.com/mariaritacasagrande/reprograma-Javascript-II#condicional---if--else)
+            *   [Operador Condicional Ternário](https://github.com/mariaritacasagrande/reprograma-Javascript-II#operador-condicional-tern%C3%A1rio)   
+        *   [Condicional - switch](https://github.com/mariaritacasagrande/reprograma-Javascript-II#condicional---switch)
+    *   [Laços de Repetição](https://github.com/mariaritacasagrande/reprograma-Javascript-II#la%C3%A7o-de-repeti%C3%A7%C3%A3o)
+        *   [for (para)](https://github.com/mariaritacasagrande/reprograma-Javascript-II#for-para)
+        *   [do…while(faça … enquanto)](https://github.com/mariaritacasagrande/reprograma-Javascript-II#dowhile-fa%C3%A7a--enquanto)
+        *   [while (enquanto)](https://github.com/mariaritacasagrande/reprograma-Javascript-II#while-enquanto)
+    * [Arrays](https://github.com/mariaritacasagrande/reprograma-Javascript-II#arrays)
+    * [Funções](https://github.com/mariaritacasagrande/reprograma-Javascript-II#fun%C3%A7%C3%B5es)
+    * [Objetos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#objetos)
     
 
 # JavaScript II
 
-* [Aula 2 - While, Do While e For](#aula-1)
+* [Aula 2 - While, Do While e For](https://github.com/mariaritacasagrande/reprograma-Javascript-II#aula-2)
     * [While](#aula-1)
     * [Do While](#)
     * [For](#)
     * [Exercicios](#)
 
-* [Aula 3 - Objetos](#)
-    * [O que são Objetos?](#)
-    * [Criando objetos](#)
-    * [Acessando propriedades e métodos](#)
-    * [Alterando e adicionando propriedades](#)
-    *  [Deletando propriedades](#)
+* [Aula 3 - Objetos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#aula-3)
+    * [O que são Objetos?](https://github.com/mariaritacasagrande/reprograma-Javascript-II#o-que-s%C3%A3o-objetos)
+    * [Criando objetos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#criando-objetos)
+    * [Acessando propriedades e métodos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#acessando-propriedades-e-m%C3%A9todos)
+    * [Alterando e adicionando propriedades](https://github.com/mariaritacasagrande/reprograma-Javascript-II#alterando-e-adicionando-propriedades)
+    *  [Deletando propriedades](https://github.com/mariaritacasagrande/reprograma-Javascript-II#deletando-propriedades)
     
     
-* [Aula 4 - Eventos](#)
-    * [O que são eventos?](#))
-    * [Como usar os eventos em JavaScript](#)
-    * [Evento Inline](#)
-    * [Usando evento externo](#)
-    * [Exemplos](#)
-        *   [onLoad ](#)
-        *   [onChange](#)
-        *   [onMouseOver e onMouseOut](#)
-        *  [onmousedown, onmouseup e onclick](#)
+* [Aula 4 - Eventos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#aula-4)
+    * [O que são eventos?](https://github.com/mariaritacasagrande/reprograma-Javascript-II#o-que-s%C3%A3o-eventos))
+    * [Como usar os eventos em JavaScript](https://github.com/mariaritacasagrande/reprograma-Javascript-II#como-usar-os-eventos-em-javascript)
+    * [Evento Inline](https://github.com/mariaritacasagrande/reprograma-Javascript-II#evento-inline)
+    * [Usando evento externo](https://github.com/mariaritacasagrande/reprograma-Javascript-II#usando-evento-externo)
+    * [Exemplos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#alguns-exemplos)
+        *   [onLoad ](https://github.com/mariaritacasagrande/reprograma-Javascript-II#onload)
+        *   [onChange](https://github.com/mariaritacasagrande/reprograma-Javascript-II#onchange)
+        *   [onMouseOver e onMouseOut](https://github.com/mariaritacasagrande/reprograma-Javascript-II#onmouseover-e-onmouseout)
+        *  [onmousedown, onmouseup e onclick](https://github.com/mariaritacasagrande/reprograma-Javascript-II#onmousedown-onmouseup-e-onclick)
 
 * [Exercícios](#)
   
@@ -253,6 +253,8 @@ switch(action) {
 
 ## Laço de Repetição
 
+![](https://media1.giphy.com/media/3o6ZsUiuuksZbtlXW0/giphy.gif)
+
 Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
 
 ### for (para)
@@ -343,7 +345,7 @@ obj.name = "Simon";
 obj.name; // print 'Simon'
 ```
 ***
-# Aula 2
+# Aula 3
 
 ![](https://boluda.com/files/objetos-javascript.png)
 
@@ -456,7 +458,7 @@ delete album.showInfo // deleta o método showInfo
 typeof album.showInfo // "undefined"
 ```
 ***
-# Aula 3
+# Aula 4
 
 ## Eventos
 
