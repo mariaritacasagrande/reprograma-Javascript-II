@@ -38,6 +38,7 @@ Para tirar dúvidas, leve para a sala de aula, mande mensagem para a professora 
     * [Arrays](https://github.com/mariaritacasagrande/reprograma-Javascript-II#arrays)
     * [Funções](https://github.com/mariaritacasagrande/reprograma-Javascript-II#fun%C3%A7%C3%B5es)
     * [Objetos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#objetos)
+        * [This](https://github.com/mariaritacasagrande/reprograma-Javascript-II#this)
     
 
 # JavaScript II
@@ -99,11 +100,11 @@ Antes de usar uma variável em um programa JavaScript, você deve declará-la.
 
 Existem três tipos de declarações em JavaScript.
 
-**var**
+`var`( funciona , mas Let e Const são mais modernos)
 Declara uma variável, opcionalmente, inicializando-a com um valor.
-**let**
+`let` (usamos e amamos)
 Declara uma variável local de escopo do bloco, opcionalmente, inicializando-a com um valor.
-**const**
+`const` (usamos e amamos)
 Declara uma constante de escopo de bloco, apenas de leitura.
 
 ### Escopo de Variavel
@@ -289,7 +290,7 @@ Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes
 Um laço for é repetido até que a condição especificada seja falsa.
 
 ```
-for (let i = 0; i < 5; i++) {
+for (var i = 0; i < 5; i++) {
     //  Vai executar 5 vezes
 }
 ```
@@ -313,14 +314,15 @@ while (condicao)
 ### Arrays
 Em JavaScript, arrays são um tipo especial de objeto que representam um conjunto ordenado de valores numerados.
 ```
-let a[0] = "dog";
+var a = new Array();
+a[0] = "dog";
 a[1] = "cat";
 a[2] = "hen";
 a.length // 3
 ```
 Uma forma mais conveniente de utilização de um array, na verdade a mais usada:
 ```
-let a = ["dog", "cat", "hen"];
+var a = ["dog", "cat", "hen"];
 a.length // 3
 ```
 ### Funções
@@ -328,7 +330,7 @@ a.length // 3
 Uma função é um objeto que tem código executável associado. Uma função pode ser chamada para executar esse código executável e retornar um valor calculado.
 ```
 function add(x, y) {
-    let total = x + y;
+    var total = x + y;
     return total;
 }
 ```
@@ -337,11 +339,11 @@ Um objeto em JavaScript é um conjunto não ordenado de valores nomeados.
 
 Para criar um objeto vazio:
 ```
-let obj = {};
+var obj = {};
 ```
 Podemos criar um objeto com propriedades e métodos:
 ```
-let obj = {
+var obj = {
     name: "Carrot",
     "for": "Max",
     details: {
@@ -364,13 +366,29 @@ function Person(name, age) {
 ```
 Instanciamos o objeto.
 ```
-let obj = new Person("You", 36);
+var obj = new Person("You", 36);
 ```
 Alteramos os valores das propriedades.
 ```
 obj.name = "Simon";
 obj.name; // print 'Simon'
 ```
+### This
+Em JavaScript, usa-se `this` de forma semelhante ao uso de pronomes em linguagens naturais, como o inglês ou francês. Escreve-se: “João está correndo rápido porque ele está tentando pegar o trem”. O uso do pronome “ele”. Poderia se ter escrito: “João está correndo rápido porque João está tentando pegar o trem”. Não se reutiliza “João” dessa maneira, pois se assim fosse, nossa família, amigos e colegas nos abandonariam… De uma maneira graciosamente semelhante, em JavaScript se usa a palavra-chave `this`  como um atalho, um referente; ou seja, o sujeito no contexto ou o sujeito do código em execução.
+
+```
+firstName : "Penelope",
+    lastName  : "Barrymore",
+    fullName  : function() {
+        // Notou o uso do "this" tal como se usou "ele" no exemplo da frase anterior?
+        console.log( this.firstName + ' ' + this.lastName );
+ 
+        // Também poderia se ter escrito:
+        console.log( person.firstName + ' ' + person.lastName );
+    }
+}
+```
+Se se usa person.firstName e person.lastName, tal como no último exemplo, o código se torna ambíguo. Considere que poderia haver outra variável global (você estando ciente dela ou não) com o nome “person”. Em seguida, as referências a person.firstName poderiam tentar acessar a propriedade firstName da variável global person e isso poderia levar a erros difíceis de serem depurados. Portanto, usa-se a palavra-chave this não apenas para fins “estéticos” (isto é, como um referente), mas, também, para fins de precisão. Seu uso realmente torna o código mais inequívoco, assim como o pronome “ele” tornou a frase mais clara, informando que se estava referindo ao João específico do início da frase.
 
 ***
 # Aula 2
@@ -383,7 +401,7 @@ Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes
 
 Você pode pensar em um laço de repetição como um jogo onde você manda o seu personagem andar X passos em uma direção e Y passos em outra; por exemplo, a ideia "vá 5 passos para leste" pode ser expressa em um laço desta forma:
 ```
-let passo;
+var passo;
 for (passo = 0; passo < 5; passo++) {
   // Executa 5 vezes, com os valores de passos de 0 a 4.
   console.log('Ande um passo para o leste');
@@ -425,8 +443,8 @@ A função a seguir contém uma declaração `for` que contará o número de op�
 
 <script>
 function howMany(selectObject) {
-  let numeroSelecionadas = 0;
-  for (let i = 0; i < selectObject.options.length; i++) {
+  var numeroSelecionadas = 0;
+  for (var i = 0; i < selectObject.options.length; i++) {
     if (selectObject.options[i].selected) {
       numeroSelecionadas++;
     }
@@ -434,7 +452,7 @@ function howMany(selectObject) {
   return numeroSelecionadas;
 }
 
-let btn = document.getElementById("btn");
+var btn = document.getElementById("btn");
 btn.addEventListener("click", function(){
   alert('Total de opções selecionadas: ' + howMany(document.selectForm.tipoMusica))
 });
@@ -680,7 +698,7 @@ Agora vamos ver um exemplo de como utilizar o Event Listener.
 </form>
  
 <script type="text/javascript">
-let f = document.forms[0];
+var f = document.forms[0];
 addEvent(f, "submit", function( e ) { alert(f.a.value);return false; });
 addEvent(f.a, "keyup", function( e ) { f.a.value=f.a.value.toUpperCase(); });
 </script>
@@ -726,7 +744,6 @@ else
 O evento onChange é utilizado para que seja realizada determinada ação após alguma mudança. No exemplo abaixo iremos fazer essa mudança acontecer ao clicarmos fora do input text.
 
 *Listagem 4:* Evento onChange
-
 ```
 <!DOCTYPE html>
 <html>
@@ -735,7 +752,7 @@ O evento onChange é utilizado para que seja realizada determinada ação após 
 <script>
 function myFunction()
 {
-let x=document.getElementById("fname");
+var x=document.getElementById("fname");
 x.value=x.value.toUpperCase();
 }
 </script>
