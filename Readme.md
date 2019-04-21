@@ -59,7 +59,7 @@ Para tirar dúvidas, leve para a sala de aula, mande mensagem para a professora 
     
     
 * [Aula 4 - Eventos](https://github.com/mariaritacasagrande/reprograma-Javascript-II#aula-4)
-    * [O que são eventos?](https://github.com/mariaritacasagrande/reprograma-Javascript-II#o-que-s%C3%A3o-eventos))
+    * [O que são eventos?](https://github.com/mariaritacasagrande/reprograma-Javascript-II#o-que-s%C3%A3o-eventos)
     * [Como usar os eventos em JavaScript](https://github.com/mariaritacasagrande/reprograma-Javascript-II#como-usar-os-eventos-em-javascript)
     * [Evento Inline](https://github.com/mariaritacasagrande/reprograma-Javascript-II#evento-inline)
     * [Usando evento externo](https://github.com/mariaritacasagrande/reprograma-Javascript-II#usando-evento-externo)
@@ -81,7 +81,7 @@ Para tirar dúvidas, leve para a sala de aula, mande mensagem para a professora 
 *Um guia rápido e básico da linguagem JavaScript.*
 
 ### Variáveis
-As variáveis são declaradas com a palavra chave var, como segue:
+As variáveis são declaradas com a palavra chave var, let ou const, como segue:
 ```
 var i;
 var sum;
@@ -92,8 +92,8 @@ var i, sum;
 ```
 E pode-se combinar a declaração da variável com sua inicialização:
 ```
-var i = 0, j = 0, k = 0;
-var nome = "Fulano";
+let i = 0, j = 0, k = 0;
+let nome = "Fulano";
 ```
 Antes de usar uma variável em um programa JavaScript, você deve declará-la.
 
@@ -244,8 +244,8 @@ if (a > b) {
 A estrutura condicional switch permite executar um bloco de código diferente de acordo com cada opção (cada case) especificada. Seu uso é indicado quando os valores a serem analisados nessas condições são pré-definidos.
 
 ```
-            var data = new Date();
-            var d = data.getDay(); //Retorna o dia da semana, começando por 0 equivalendo ao domingo.
+            let data = new Date();
+            let d = data.getDay(); //Retorna o dia da semana, começando por 0 equivalendo ao domingo.
              
             switch(d){
                 case 0:
@@ -432,7 +432,7 @@ Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes
 Um laço for é repetido até que a condição especificada seja falsa.
 
 ```
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
     //  Vai executar 5 vezes
 }
 ```
@@ -481,11 +481,11 @@ Um objeto em JavaScript é um conjunto não ordenado de valores nomeados.
 
 Para criar um objeto vazio:
 ```
-var obj = {};
+let obj = {};
 ```
 Podemos criar um objeto com propriedades e métodos:
 ```
-var obj = {
+let obj = {
     name: "Carrot",
     "for": "Max",
     details: {
@@ -508,7 +508,7 @@ function Person(name, age) {
 ```
 Instanciamos o objeto.
 ```
-var obj = new Person("You", 36);
+let obj = new Person("You", 36);
 ```
 Alteramos os valores das propriedades.
 ```
@@ -516,6 +516,7 @@ obj.name = "Simon";
 obj.name; // print 'Simon'
 ```
 ### This
+
 Em JavaScript, usa-se `this` de forma semelhante ao uso de pronomes em linguagens naturais, como o inglês ou francês. Escreve-se: “João está correndo rápido porque ele está tentando pegar o trem”. O uso do pronome “ele”. Poderia se ter escrito: “João está correndo rápido porque João está tentando pegar o trem”. Não se reutiliza “João” dessa maneira, pois se assim fosse, nossa família, amigos e colegas nos abandonariam… De uma maneira graciosamente semelhante, em JavaScript se usa a palavra-chave `this`  como um atalho, um referente; ou seja, o sujeito no contexto ou o sujeito do código em execução.
 
 ```
@@ -560,12 +561,13 @@ for ([expressaoInicial]; [condicao]; [incremento])
 ```
 Quando um for é executado, ocorre o seguinte:
 
-*   A expressão expressao Inicial é inicializada e, caso possível, é executada. Normalmente essa expressão inicializa um ou mais contadores, mas a sintaxe permite expressões de qualquer grau de complexidade. Podendo conter também declaração de variáveis.
-*   A expressão condicao é avaliada. caso o resultado de condicao seja verdadeiro, o laço é executado. Se o valor de condicao é falso, então o laço terminará. Se a expressão condicao é omitida, a condicao é assumida como verdadeira.
+*   A expressão Inicial é inicializada e, caso possível, é executada. Normalmente essa expressão inicializa um ou mais contadores, mas a sintaxe permite expressões de qualquer grau de complexidade. Podendo conter também declaração de variáveis.
+*   A expressão condicao é avaliada. caso o resultado de condicao seja verdadeiro, o laço é executado. Se o valor de condição é falso, então o laço terminará. Se a expressão condicao é omitida, a condição é assumida como verdadeira.
 *   A instrução é executada. Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupá-las.
 *   A atualização da expressão incremento, se houver, executa, e retorna o controle para o passo 2.
 
 ### Exemplo
+
 A função a seguir contém uma declaração `for` que contará o número de opções selecionadas em uma lista (um elemento <select> permite várias seleções). Dentro do for é declarado uma váriavel i inicializada com zero. A declaração for verifica se i é menor que o número de opções no elemento <select>, executa sucessivas declaração  if, e incrementa i de um em um a cada passagem pelo laço.
 ```
 <form name="selectForm">
@@ -585,7 +587,7 @@ A função a seguir contém uma declaração `for` que contará o número de op�
 
 <script>
 function howMany(selectObject) {
-  var numeroSelecionadas = 0;
+  let numeroSelecionadas = 0;
   for (var i = 0; i < selectObject.options.length; i++) {
     if (selectObject.options[i].selected) {
       numeroSelecionadas++;
@@ -594,7 +596,7 @@ function howMany(selectObject) {
   return numeroSelecionadas;
 }
 
-var btn = document.getElementById("btn");
+let btn = document.getElementById("btn");
 btn.addEventListener("click", function(){
   alert('Total de opções selecionadas: ' + howMany(document.selectForm.tipoMusica))
 });
@@ -603,7 +605,9 @@ btn.addEventListener("click", function(){
 ```
 
 ## do...while (faça ... enquanto)
+
 A instrução `do...while` repetirá **até que** a condição especificada seja falsa.
+
 ```
 do
   declaracao
@@ -613,7 +617,9 @@ while (condicao);
 A instrução será executada uma vez antes da condição ser verificada. Para executar multiplas instruções utilize uma declaração de bloco ({ ... }) para agrupá-las. Caso a condicao seja verdadeira, então o laço será executado novamente. Ao final de cada execução, a condicao é verificada. Quando a condição contida no while for falsa a execução do laço é terminada e o controle é passado para a instrução seguinte a `do...while`.
 
 #### Exemplo
+
 No exemplo a seguir, o laço é executado pelo menos uma vez e irá executar até que i seja menor que 5.
+
 ```
 do {
   i += 1;
@@ -622,7 +628,9 @@ do {
 ```
 
 ## while (enquanto)
+
 Uma declaração while executa suas instruções, desde que uma condição especificada seja avaliada como verdadeira. Segue uma declaração while: 
+
 ```
 while (condicao)
   declaracao
@@ -635,7 +643,9 @@ O teste da condição ocorre antes que o laço seja executado. Desta forma se a 
 Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupar essas declarações.
 
 ### Exemplo 1
+
 O while a seguir executará enquanto n for menor que três:
+
 ```
 n = 0;
 x = 0;
@@ -653,6 +663,7 @@ A cada iteração, o laço incrementa n e adiciona este valor para x. Portanto, 
 *   Depois de executar pela terceira vez, a condição n < 3 não será mais verdadeira, então o laço encerrará.
 
 ### Exemplo 2
+
 Evite laços infinitos. Tenha certeza que a condição do laço eventualmente será falsa; caso contrário, o laço nunca terminará. O while a seguir executará para sempre pois sua condição nunca será falsa:
 ```
 while (true) {
@@ -661,6 +672,7 @@ while (true) {
 ```
 
 ***
+
 # Aula 3
 
 ![](https://boluda.com/files/objetos-javascript.png)
@@ -785,15 +797,15 @@ Os eventos são basicamente um conjunto de ações que são realizadas em um det
 
 Existe uma infinidade de eventos definidos para uso em JavaScript, abaixo podemos ver alguns dos principais e mais utilizados:
 
-*onBlur*	remove o foco do elemento
-*onChange*	muda o valor do elemento
-*onClick*	o elemento é clicado pelo usuário
-*onFocus*	o elemento é focado
-*onKeyPress*	o usuário pressiona uma tecla sobre o elemento
-*onLoad*	carrega o elemento por completo
-*onMouseOver*	define ação quando o usuário passa o mouse sobre o elemento
-*onMouseOut*	define ação quando o usuário retira o mouse sobre o elemento
-*onSubmit*	define ação ao enviar um formulário
+ -  *onBlur*	remove o foco do elemento
+ - *onChange*	muda o valor do elemento
+ - *onClick*	o elemento é clicado pelo usuário
+ - *onFocus*	o elemento é focado
+ - *onKeyPress*	o usuário pressiona uma tecla sobre o elemento
+ - *onLoad*	carrega o elemento por completo
+ - *onMouseOver*	define ação quando o usuário passa o mouse sobre o elemento
+ - *onMouseOut*	define ação quando o usuário retira o mouse sobre o elemento
+ - *onSubmit*	define ação ao enviar um formulário
 
 ## Como usar os eventos em JavaScript
 
@@ -805,7 +817,7 @@ Existem diversas maneiras de se aplicar esses eventos aos elementos HTML, são e
 
 Vamos ver um exemplo de como usar um evento de maneira inline em JavaScript. Dessa forma é preciso que tudo seja definido diretamente na tag do elemento, dessa forma:
 
-*Listagem 1:* Eventos inline JavaScript
+*1:* Eventos inline JavaScript
 ```
 <!DOCTYPE html>
 <html>
@@ -830,7 +842,7 @@ Para chamar um evento externo iremos precisar de um manipulador de eventos, ness
 
 Agora vamos ver um exemplo de como utilizar o Event Listener.
 
-*Listagem 2:* Usando Event Listener
+*2:* Usando Event Listener
 ```
 <script type="text/javascript" src="/path/to/event-listener.js"></script>
  
@@ -854,7 +866,7 @@ No exemplo 1 vimos como utilizar o evento onClick, abaixo iremos ver alguns mais
 ### onLoad
 O evento onload pode ser usado quando queremos que algo seja carregado junto com o carregamento da página.
 
-*Listagem 3:* usando evento onLoad
+* 3:* usando evento onLoad
 ```
 <!DOCTYPE html>
 <html>
@@ -885,7 +897,7 @@ else
 ### onChange
 O evento onChange é utilizado para que seja realizada determinada ação após alguma mudança. No exemplo abaixo iremos fazer essa mudança acontecer ao clicarmos fora do input text.
 
-*Listagem 4:* Evento onChange
+*4:* Evento onChange
 ```
 <!DOCTYPE html>
 <html>
@@ -913,7 +925,7 @@ Ao clicarmos fora do input text o texto escrito nele ficará todo em caixa alta.
 ### onMouseOver e onMouseOut
 Esses eventos são responsáveis pelas ações que o usuário faz com o mouse, passando o mouse no elemento e tirando o mouse do elemento, respectivamente.
 
-*Listagem 5:* Eventos onmouseover e onmouseout
+*5:* Eventos onmouseover e onmouseout
 ```
 <!DOCTYPE html>
 <html>
@@ -944,7 +956,7 @@ obj.innerHTML="Passe o mouse em mim"
 ### onmousedown, onmouseup e onclick
 Nesse exemplo iremos ver como trabalhar com o clique, o segurar o clique e o soltar do clique.
 
-*Listagem 6:* Eventos onmousedown, onmouseup e onclick
+*6:* Eventos onmousedown, onmouseup e onclick
 
 ```
 <!DOCTYPE html>
