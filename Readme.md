@@ -28,6 +28,7 @@ Para tirar dúvidas, leve para a sala de aula, mande mensagem para a professora 
         *   [Condicional - if / else](https://github.com/mariaritacasagrande/reprograma-Javascript-II#condicional---if--else)
             *   [Operador Condicional Ternário](https://github.com/mariaritacasagrande/reprograma-Javascript-II#operador-condicional-tern%C3%A1rio)   
         *   [Condicional - switch](https://github.com/mariaritacasagrande/reprograma-Javascript-II#condicional---switch)
+        *   [Break e continue](https://github.com/mariaritacasagrande/reprograma-Javascript-II#condicional---break-e-continue)
     *   [DOM](https://github.com/mariaritacasagrande/reprograma-Javascript-II#dom)
         *   [O que é DOM](https://github.com/mariaritacasagrande/reprograma-Javascript-II#o-que-%C3%A9-o-dom)
         *   [Métodos para manipular o DOM](https://github.com/mariaritacasagrande/reprograma-Javascript-II#m%C3%A9todos-para-manipular-o-dom)
@@ -243,18 +244,159 @@ if (a > b) {
 A estrutura condicional switch permite executar um bloco de código diferente de acordo com cada opção (cada case) especificada. Seu uso é indicado quando os valores a serem analisados nessas condições são pré-definidos.
 
 ```
-switch(action) {
-    case 'draw':
-        drawit();
-        break;
-    case 'eat':
-        eatit();
-        break;
-    default:
-        donothing();
-}
+            var data = new Date();
+            var d = data.getDay(); //Retorna o dia da semana, começando por 0 equivalendo ao domingo.
+             
+            switch(d){
+                case 0:
+                    alert("Domingo");
+                break;
+                 
+                case 1:
+                    alert("Segunda");
+                break;
+                 
+                case 2:
+                    alert("Terça");
+                break;
+                 
+                case 3:
+                    aert("Quarta");
+                break;
+                 
+                case 4:
+                    alert("Quinta");
+                break;
+                 
+                case 5:
+                    alert("Sexta");
+                break;
+                 
+                case 6:
+                    alert("Sábado");
+                break;
+                 
+                default:
+                    alert("Não identificado");              
+            }
+
 ```
+Agora vamos entender melhor cada parte:
+
+`Switch` – Recebe por parâmetro o valor que será verificado.
+`Case`: Informamos um valor a frente que será comparado, ou seja, o valor testado e se retornar verdadeiro executa a instrução contida nele.  
+`Break`: Se uma condição e operação foram realizadas, o break garante que nossa aplicação vai sair do switch e o outro case não serão testados.
+`Default`: Se nenhuma condição foi satisfeita, o default assume como execução padrão, ou seja, ele sempre será executado caso nenhuma condição tenha sido reproduzida.
+
+![](https://www.satellasoft.com/img/img_materia/jdbais01.png)
+
+## Break e Continue
+Break e Continue são utilizados para controle de estruturas fechadas como for, while e switch.
+
+Break serve para sair de uma estrutura. Por exemplo, se estivermos em uma estrutura de repetição que irá contar de 1 a 1.000.000, mas nós colocarmos uma condição que diz que se o número for 5, então quebre (saia) da estrutura. Faríamos o seguinte código.
+```
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+let x;
+for (x=1; x<=1000000; x++){
+document.write(x+" ");
+if (x==5)
+break;
+}
+</SCRIPT>
+```
+Que resulta em: 1 2 3 4 5
+
+Podemos observar que, apesar de termos definido a estrutura de repetição for para contar de 1 a 1.000.000, os únicos números que aparecem são 1, 2, 3, 4 e 5. Isso acontece porque que dentro da condição (if) determinamos que quando x for igual a 5, o comando break deve ser chamado e dessa forma nós saímos de dentro de for sem ter que chegar até o fim.
+
+O continue também serve para controlar estruturas de dados fechadas, assim como o break. Mas, sua principal diferença é que, ao invés de sair completamente da estrutura, o continue apenas ignora o resto da estrutura e prossegue com a seguinte.
+
+Simplificadamente, em uma estrutura switch, no qual tem os cases, automaticamente, o próximo case será selecionado. Em uma estrutura de repetição como for, todo o bloco de dados abaixo do comando continue será ignorado e a repetição continua com o próximo loop.
+
+É um conceito importante, embora, teoricamente, seja difícil de entender. Então, abaixo está um código com erro por estar sem o continue.
+
+```
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+let nr;
+for (nr=1; nr<=20; nr++){
+if (nr%4 == 0){
+document.write ("pin");
+document.write ("<br>");
+}
+document.write (nr);
+document.write ("<br>");
+}
+</SCRIPT>
+```
+O script acima deveria fazer o browser responder de acordo com a brincadeira do um, dois, três, pin... Ou seja, a cada múltiplo de 4 o browser não pode contar, ao invés disso, deve aparecer pin. Mas, veja que o resultado está errado.
+
+1
+2
+3
+pin
+4
+5
+6
+7
+pin
+8
+9
+10
+11
+pin
+12
+13
+14
+15
+pin
+16
+17
+18
+19
+pin
+20
+
+Sempre que aparece o pin, também aparece o número múltiplo de 4. Isso porque o if é executado e depois o código que está abaixo dele também. Para evitar que o código abaixo dele seja executado, e mesmo assim continuar executando o loop, devemos usar o continue. Veja a diferença agora.
+```
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+let nr;
+for (nr=1; nr<=20; nr++){
+if (nr%4 == 0){
+document.write ("pin");
+document.write ("<br>");
+continue; //ignora todo o resto e continua o loop
+}
+document.write (nr);
+document.write ("<br>");
+}
+</SCRIPT>
+```
+Veja que agora os múltiplos de quatro são apenas o pin e não o número.
+
+1
+2
+3
+pin
+5
+6
+7
+pin
+9
+10
+11
+pin
+13
+14
+15
+pin
+17
+18
+19
+pin
+
+
 > Exercício: Switch
+
+
 ## DOM
 
 ### O que é o DOM?
